@@ -8,6 +8,8 @@ pylint = "*"
 jedi = "*"
 django-lint = "*"
 django-debug-toolbar = "*"
+ipdb = "*"
+ipython = "*"
 
 [packages]
 django = "===3.0.7"
