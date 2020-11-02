@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+
+      <h1>{% trans "Search Question" %}</h1>
+      <div class="starter-template">
+          {% if form %}
+          <form action="." method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <p>
+              <small>A comma-separated list of tags.</small>
+              </p>
+              <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+          {% endif %}
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      {% if questions %}
+      <div class="starter-template">
+          {% for question in questions %}
+          <div class="card">
+              <div class="card-header">
+                  {% for tag in question.tags.all %}
+                  <span class="badge badge-primary">{{ tag }}</span>
+                  {% endfor %}
+              </div>
+              <div class="card-body">
+                  <h5 class="card-title">{{ question.title }}</h5>
+                <a href="#" class="btn btn-primary">Open</a>
+              </div>
+            </div>
+            <hr>
+            {%endfor%}
+      </div>
+      {% endif %}
+
+    </div>
+
+{% endblock %}
