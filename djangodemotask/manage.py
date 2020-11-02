@@ -5,7 +5,12 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djangodemotask.settings')
+    if os.environ['debug'] == True:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE',
+                              'djangodemotask.settings.development')
+    else:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE',
+                              'djangodemotask.settings.production')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

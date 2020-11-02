@@ -1,14 +1,14 @@
+# Base
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 TEMP_DIR = os.path.join(BASE_DIR, 'template')
 
-SECRET_KEY = 'xh0ep++th=6l2obgr!!jp*s+0jvck#nnq)6yls=9t-!sz-7v1w'
+SECRET_KEY = os.environ['secret_key']
 
-DEBUG = True
+DEBUG = os.environ['debug']
 
-ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -17,6 +17,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'core'
 ]
 
 MIDDLEWARE = [
@@ -34,7 +36,7 @@ ROOT_URLCONF = 'djangodemotask.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMP_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
