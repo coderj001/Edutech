@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-02 19:47+0530\n"
+"POT-Creation-Date: 2020-11-03 02:15+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: core/views.py:13
+#: core/views.py:14
 msgid "Hello World"
 msgstr "नमस्ते दुनिया"
 
-#: template/core/homepage.html:5
-msgid "My name is Raj Das"
-msgstr "मेरा नाम राज दास है"
+#: template/core/ask_question.html:8
+msgid "Ask Question Here"
+msgstr "प्रश्न यहाँ पूछें"
+
+#: template/core/homepage.html:8
+msgid "Welcome To Edutech"
+msgstr "आपका स्वागत है Edutech के लिए"
+
+#: template/core/homepage.html:9
+msgid ""
+"Use this document as a way to quickly start any new project.<br> All you get "
+"is this text and a mostly barebones HTML document."
+msgstr ""
+"इस दस्तावेज़ का उपयोग किसी भी नई परियोजना को जल्दी से शुरू करने के तरीके के रूप में करें। "
+"<br> आपको केवल यह पाठ और अधिकतर नंगे HTML दस्तावेज़ मिलेंगे।"
+
+#~ msgid "My name is Raj Das"
+#~ msgstr "मेरा नाम राज दास है"

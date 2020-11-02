@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'taggit',
 
     'core'
 ]
@@ -75,6 +76,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+TAGGIT_CASE_INSENSITIVE = True
 
 LANGUAGE_CODE = 'en-us'
 # LANGUAGE_CODE = 'hi-in'

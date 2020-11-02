@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    if os.environ['debug'] == True:
+    if bool(os.environ['debug']) == True:
         os.environ.setdefault('DJANGO_SETTINGS_MODULE',
                               'djangodemotask.settings.development')
     else:

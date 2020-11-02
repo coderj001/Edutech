@@ -7,10 +7,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-urlpatterns += i18n_patterns(path('', include('core.urls')),
-                             )
+urlpatterns += i18n_patterns(path('', include('core.urls')),)
 
 
 if settings.DEBUG:
     import debug_toolbar
-    urlpatterns += [path('__debug__/', include(debug_toolbar.urls))]
+    urlpatterns += (path('__debug__/', include(debug_toolbar.urls)), )

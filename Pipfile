@@ -7,12 +7,13 @@ verify_ssl = true
 pylint = "*"
 jedi = "*"
 django-lint = "*"
-django-debug-toolbar = "*"
 ipdb = "*"
 ipython = "*"
+django-debug-toolbar = "*"
 
 [packages]
 django = "===3.0.7"
+django-taggit = "*"
 
 [requires]
 python_version = "3.8"
