@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.utils.translation import gettext as _
-from core.forms import (QuestionForm, SearchForm, )
-from core.models import Question
+from core.forms import (QuestionForm, SearchForm, AnswerForm)
+from core.models import (Question, Answer)
 from taggit.models import Tag
 
 # Create your views here.
@@ -59,3 +59,21 @@ def search_question(request):
             context['questions'] = qu
         context['form'] = form
         return render(request, 'core/search_question.html', context=context)
+
+
+def question(request, id):
+    question = get_object_or_404(Question, id=id)
+    context = {}
+    context['question'] = question
+    if request.method == 'GET':
+        form = AnswerForm()
+        context['form'] = form
+    if request.method == 'POST':
+        form = AnswerForm(request.POST or None)
+        if form.is_valid():
+            answer = form.save(commit=False)
+            answer.created_by = request.user
+            answer.question = question
+            form.save()
+        context['form'] = form
+    return render(request, 'core/question.html', context=context)

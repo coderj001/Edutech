@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import Question
+from core.models import (Question, Answer)
 
 # Register your models here.
 
@@ -13,3 +13,8 @@ class QuestionAdmin(admin.ModelAdmin):
 
     def tag_list(self, obj):
         return u", ".join(o.name for o in obj.tags.all())
+
+
+@admin.register(Answer)
+class AnswerAdmin(admin.ModelAdmin):
+    list_display = ('id', 'created_by')

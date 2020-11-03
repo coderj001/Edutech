@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+
+    <h1>{{question.title}}</h1>
+      <div class="starter-template">
+          <p>{{question.description}}</p>
+
+          {% for tag in question.tags.all %}
+          <span class="badge badge-primary">{{ tag }}</span>
+          {% endfor %}
+      </div>
+      <hr>
+      <br>
+    {% for answer in question.answer.all %}
+     <ul>
+      {{ answer.text }}
+      {% for reply in answer.replies.all %}
+          <li>
+              {{ reply.text }}
+          </li>
+      {% endfor %}
+     <ul>
+     {% endfor %}
+
+      <hr>
+      <br>
+      <div class="starter-template">
+          <h3>Answer</h3>
+          <form action="." method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+</div>
+
+{% endblock %}
