@@ -8,7 +8,7 @@ TEMP_DIR = os.path.join(BASE_DIR, 'template')
 
 SECRET_KEY = os.environ['secret_key']
 
-DEBUG = os.environ['debug']
+DEBUG = bool(os.environ['debug'])
 
 
 INSTALLED_APPS = [
