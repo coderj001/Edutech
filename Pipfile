@@ -15,7 +15,6 @@ django-debug-toolbar = "*"
 django = "===3.0.7"
 django-taggit = "*"
 gunicorn = "*"
-whitenoise = "*"
 
 [requires]
 python_version = "3.8"

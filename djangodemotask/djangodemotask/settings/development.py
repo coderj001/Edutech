@@ -10,13 +10,6 @@ INSTALLED_APPS += [
 
 MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.versions.VersionsPanel',
     'debug_toolbar.panels.timer.TimerPanel',
