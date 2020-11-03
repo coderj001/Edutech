@@ -14,6 +14,7 @@ django-debug-toolbar = "*"
 [packages]
 django = "===3.0.7"
 django-taggit = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
