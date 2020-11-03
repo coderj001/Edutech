@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <nav class="navbar navbar-light bg-light justify-content-between">
     <a class="navbar-brand" href="{% url 'core:homepage' %}">Edutech</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,20 +9,20 @@
         <ul class="navbar-nav">
             {% if request.user.is_authenticated %}
           <li class="nav-item">
-              <a class="nav-link" href="{% url 'core:ask_question' %}">Ask Question</a>
+              <a class="nav-link" href="{% url 'core:ask_question' %}">{% trans "Ask Question" %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'core:search_question' %}">Search Question</a>
+              <a class="nav-link" href="{% url 'core:search_question' %}">{% trans "Search Question" %}</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="{% url 'core:logout' %}">Logout</a>
+              <a class="nav-link" href="{% url 'core:logout' %}">{% trans "Logout" %}</a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'core:signup' %}">Signup</a>
+              <a class="nav-link" href="{% url 'core:signup' %}">{% trans "Signup" %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'core:login' %}">Login</a>
+              <a class="nav-link" href="{% url 'core:login' %}">{% trans "Login" %}</a>
           </li>
           {% endif %}
           <li class="nav-item">

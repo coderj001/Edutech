@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-03 02:15+0530\n"
+"POT-Creation-Date: 2020-11-03 18:06+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,25 +18,60 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: core/views.py:14
-msgid "Hello World"
-msgstr "नमस्ते दुनिया"
-
 #: template/core/ask_question.html:8
 msgid "Ask Question Here"
 msgstr "प्रश्न यहाँ पूछें"
 
 #: template/core/homepage.html:8
+#, fuzzy
+#| msgid "Welcome To Edutech"
 msgid "Welcome To Edutech"
 msgstr "आपका स्वागत है Edutech के लिए"
 
 #: template/core/homepage.html:9
-msgid ""
-"Use this document as a way to quickly start any new project.<br> All you get "
-"is this text and a mostly barebones HTML document."
-msgstr ""
-"इस दस्तावेज़ का उपयोग किसी भी नई परियोजना को जल्दी से शुरू करने के तरीके के रूप में करें। "
-"<br> आपको केवल यह पाठ और अधिकतर नंगे HTML दस्तावेज़ मिलेंगे।"
+msgid "Please read the readme page of this project link on github given below."
+msgstr "कृपया नीचे दिए गए github पर इस प्रोजेक्ट लिंक का रीडमी पृष्ठ पढ़ें।"
+
+#: template/core/login.html:8
+msgid "Login Page"
+msgstr "लॉगिन वाला पन्ना"
+
+#: template/core/navbar.html:12
+#, fuzzy
+#| msgid "Ask Question Here"
+msgid "Ask Question"
+msgstr "प्रश्न यहाँ पूछें"
+
+#: template/core/navbar.html:15 template/core/search_question.html:7
+msgid "Search Question"
+msgstr "प्रश्न खोज"
+
+#: template/core/navbar.html:18
+msgid "Logout"
+msgstr "लॉग आउट"
+
+#: template/core/navbar.html:22
+msgid "Signup"
+msgstr "साइन अप करें"
+
+#: template/core/navbar.html:25
+msgid "Login"
+msgstr "लॉग इन करें"
+
+#: template/core/signup.html:8
+msgid "SignUp Page"
+msgstr "साइनअप पृष्ठ"
+
+#, fuzzy
+#~ msgid ""
+#~ "use this document as a way to quickly start any new project.<br> all you "
+#~ "get is this text and a mostly barebones html document."
+#~ msgstr ""
+#~ "इस दस्तावेज़ का उपयोग किसी भी नई परियोजना को जल्दी से शुरू करने के तरीके के रूप में करें। "
+#~ "<br> आपको केवल यह पाठ और अधिकतर नंगे HTML दस्तावेज़ मिलेंगे।"
+
+#~ msgid "Hello World"
+#~ msgstr "नमस्ते दुनिया"
 
 #~ msgid "My name is Raj Das"
 #~ msgstr "मेरा नाम राज दास है"
