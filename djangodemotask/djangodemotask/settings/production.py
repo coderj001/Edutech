@@ -3,7 +3,7 @@ from .base import *
 DEBUG = False
 
 # Add on production
-ALLOWED_HOSTS = ['djangodemotask.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ["*"]
 
 CACHES = {
     'default': {
