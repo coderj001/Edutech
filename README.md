@@ -4,7 +4,7 @@
 - search
 
 ## TODO
-- auth
+-- auth
 - style (bootstrap)
 - doc
 - ckeditor

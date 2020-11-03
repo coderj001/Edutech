@@ -14,21 +14,26 @@
       </div>
       <hr>
       <br>
-    {% for answer in question.answer.all %}
-     <ul>
-      {{ answer.text }}
-      {% for reply in answer.replies.all %}
-          <li>
-              {{ reply.text }}
-          </li>
-      {% endfor %}
-     <ul>
-     {% endfor %}
-
+      {% if question.answer %}
+          <div class="">
+              <h3>Answers: </h3>
+              <div class="list-group">
+                  {% for answer in question.answer.all %}
+                  <div class="card list-group-item">
+                      <div class="card-body">
+                          <blockquote class="blockquote mb-0">
+                              <p> {{ answer.text }} </p>
+                              <footer class="blockquote-footer">Answer by: {{answer.created_by.username}} Answer at: {{answer.created_at|date:"D, d M, Y"}}</footer>
+                          </blockquote>
+                      </div>
+                  </div>
+                  {% endfor %}
+              </div>
+      </div>
+      {% endif %}
       <hr>
       <br>
       <div class="starter-template">
-          <h3>Answer</h3>
           <form action="." method="post">
             {{ form.as_p }}
             {% csrf_token %}

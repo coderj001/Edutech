@@ -32,6 +32,10 @@
               </div>
               <div class="card-body">
                   <h5 class="card-title">{{ question.title }}</h5>
+                  <p class="card-text">
+                      <b>Asked By: </b>{{question.created_by.username}}
+                      <b>Asked At: </b>{{question.created_at|date:"D, d M, Y"}}
+                  </p>
                   <a href="{{question.get_absolute_url}}" class="btn btn-primary">Open</a>
               </div>
             </div>

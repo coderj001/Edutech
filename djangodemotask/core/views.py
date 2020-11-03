@@ -116,5 +116,6 @@ def question(request, id):
             answer.created_by = request.user
             answer.question = question
             form.save()
+            form = AnswerForm()
         context['form'] = form
     return render(request, 'core/question.html', context=context)
