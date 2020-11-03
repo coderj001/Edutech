@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate
 
 
 class QuestionForm(forms.ModelForm):
+    """ Form For Question Model """
     class Meta:
         model = Question
         fields = [
@@ -15,11 +16,13 @@ class QuestionForm(forms.ModelForm):
 
 
 class SearchForm(forms.Form):
+    """ Form for valid search and feed result """
     title = forms.CharField(max_length=255, required=False, label='Title')
     tags = TagField(max_length=100, label='Tags', required=False)
 
 
 class AnswerForm(forms.ModelForm):
+    """ Form for answer model """
     class Meta:
         model = Answer
         fields = [
@@ -28,10 +31,12 @@ class AnswerForm(forms.ModelForm):
 
 
 class UserLoginForm(forms.Form):
+    """ UserLoginForm similar to  usercreationform of django for for authenticate valid user """
     username = forms.CharField(required=True)
     password = forms.CharField(required=True, widget=forms.PasswordInput)
 
     def clean(self, *args, **kwargs):
+        """ For getting clean username and password input """
 
         username = self.cleaned_data.get('username')
         password = self.cleaned_data.get('password')

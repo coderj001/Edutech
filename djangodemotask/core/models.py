@@ -7,7 +7,7 @@ from django.urls import reverse
 
 
 class Question(models.Model):
-    """ Question models """
+    """ Question models db """
     title = models.CharField(max_length=255, blank=False, null=False)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -35,6 +35,7 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
+    """ Answer models db """
     question = models.ForeignKey(
         Question, on_delete=models.CASCADE, related_name='answer')
     created_by = models.ForeignKey(

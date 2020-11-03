@@ -5,6 +5,5 @@
 
 ## TODO
 -- auth
-- style (bootstrap)
+-- style (bootstrap)
 - doc
-- ckeditor
