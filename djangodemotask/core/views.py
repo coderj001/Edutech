@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.utils.translation import gettext as _
-from core.forms import (QuestionForm, SearchForm, AnswerForm)
+from core.forms import (QuestionForm, SearchForm, AnswerForm, UserLoginForm)
 from core.models import (Question, Answer)
 from taggit.models import Tag
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, logout, authenticate
 
 # Create your views here.
 
@@ -15,6 +17,45 @@ def demo(request):
 def homepage(request):
     context = {}
     return render(request, 'core/homepage.html', context=context)
+
+
+def signup_user(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST or None)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('core:homepage')
+        else:
+            return render(request, 'core/signup.html', {'form': form})
+    form = UserCreationForm()
+    return render(request, 'core/signup.html', {'form': form})
+
+
+def logout_user(request):
+    logout(request)
+    return redirect("core:homepage")
+
+
+def login_user(request):
+    if request.method == 'POST':
+        form = UserLoginForm(request.POST or None)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                try:
+                    return redirect(request.GET['next'])
+                except:
+                    return redirect('core:homepage')
+            else:
+                return render(request, 'core/login.html', {'form': form})
+        else:
+            return render(request, 'core/login.html', {'form': form})
+    form = UserLoginForm()
+    return render(request, 'core/login.html', {'form': form})
 
 
 def ask_question(request):

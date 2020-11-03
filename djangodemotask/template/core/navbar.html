@@ -5,12 +5,24 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+            {% if request.user.is_authenticated %}
           <li class="nav-item">
               <a class="nav-link" href="{% url 'core:ask_question' %}">Ask Question</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'core:search_question' %}">Search Question</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'core:logout' %}">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:signup' %}">Signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:login' %}">Login</a>
+          </li>
+          {% endif %}
           <li class="nav-item">
             <a class="nav-link" href="/">English</a>
           </li>
