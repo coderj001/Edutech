@@ -10,7 +10,6 @@ django-lint = "*"
 ipdb = "*"
 ipython = "*"
 django-debug-toolbar = "*"
-sphinx = "*"
 
 [packages]
 django = "===3.0.7"
