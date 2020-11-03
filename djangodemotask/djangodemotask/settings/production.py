@@ -1,6 +1,6 @@
 from .base import *
 
-DEBUG = False
+DEBUG = True
 
 # Add on production
 ALLOWED_HOSTS = ["*"]
