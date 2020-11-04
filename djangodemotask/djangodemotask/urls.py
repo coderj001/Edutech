@@ -7,7 +7,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-# For hindi langauge support
 urlpatterns += i18n_patterns(path('', include('core.urls')),)
 
 
